@@ -108,12 +108,11 @@
  	.off { visibility: hidden; }
     .btns{
     display: flex;
-    justify-content: space-evenly;
-    align-items: stretch;
-    align-content: center;
     width: 70%;
+    gap: 30px;
+    justify-content: center;
     }
-  .btns button {
+  .btns a {
   background-color: #4CAF50; /* Green */
   border: none;
   color: white;
@@ -133,8 +132,10 @@
   </div>
 <div id="vilkor" class="full off" onclick="vilkor.classList.toggle('off');" style="display: grid; align-content: center;">
   <img src="https://i.hizliresim.com/rrzw268.png">
-<div class="btns"> <button> Send Email</button> <button> Send SMS</button> </div>
-  </div>
+<div class="btns">
+    <a href="mailto:xpoprating@gmail.com" class="btn">Send Email</a>
+    <a href="sms:+4795557474" class="btn">Send SMS</a>
+    </div>
 
   <script>
     pagination.onclick = function () {
