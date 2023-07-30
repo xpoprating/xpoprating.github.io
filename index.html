@@ -1,53 +1,123 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Resim Görüntüleme</title>
-    <style>
-body, html {
-	margin: 0;
-	padding: 0;
-    background-color: #1259aa;
-}
+  <!-- anime.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
 
-.size {
-    overflow: auto;
-    box-shadow: 0px 0px 10px 1px black;
-    height: 100%;
-    max-width: 100%;
-    margin: auto;
-    gap: 30px;
-}
+  <style>
+    body {
+      background-image: linear-gradient(45deg, #8B5CF6, #EC4899);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
 
-.image-container {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    background-color: #f0f0f0;
-    flex-direction: column;
-    align-items: center;
-}
+    #container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      max-width: 600px;
+      min-width: 200px;
+      width: 100%;    
+    }
 
-.image-container img {
-	max-width: 100%;
-	max-height: 100%;
-}
-.image-container video {
-	max-width: 100%;
-	max-height: 100%;
-}
-    </style>
+    #table {
+      margin-top: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      max-width: 600px;
+      min-width: 200px;
+      width: 100%;
+	  margin:auto;
+      text-align: center;
+    }
+
+    #pagination {
+      margin-top: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: auto;
+      max-width: 600px;
+      min-width: 200px;
+      width: 100%;
+	  padding: 10px 0px 10px 0px;
+    }
+
+    .btn {
+      padding: 8px 16px;
+      margin: 0 5px;
+      cursor: pointer;
+      border: none;
+      background-color: #f2f2f2;
+    }
+
+    .aktiv {
+      background-color: #ccc;
+    }
+
+    #table img, .size {
+      max-width: 90%;
+      height: auto;
+	  box-shadow: 0px 7px 20px 3px black;
+      border-radius:20px;
+    }
+  </style>
 </head>
 <body>
-    <div class="image-container size">
-	<img src="https://no.popcardreview.com/cdn/shop/files/Norvegian.jpg?v=1689692198" alt="Norveç resmi">
-    <img src="https://no.popcardreview.com/cdn/shop/files/GIF_2_900x.gif?v=1684252269">
-	<video autoplay muted loop controls>
-        <source src="https://cdn.shopify.com/videos/c/o/v/5d02541860fb41c28e4f7fc322011f24.mp4" type="video/mp4">
-        Tarayıcınız video etiketini desteklemiyor.
-    </video>
-       <img src="https://no.popcardreview.com/cdn/shop/files/Norvegian_900x.gif?v=1689757972">
-
+  <div id="container">
+    <table id="table"></table>
+    <div id="pagination"></div>
   </div>
 
+  <script>
+    pagination.onclick = function () {
+      const targetLeft = event.target.offsetLeft - pagination.offsetWidth / 1.9;
+      anime({
+        targets: pagination,
+        scrollLeft: targetLeft,
+        duration: 1000,
+        easing: "easeInOutQuad",
+      });
+    };
+
+    let galeri = [
+      { name: "1", url: "https://bestill.online/add/g.png" },
+      { name: "2", url: "https://bestill.online/add/i.png" },
+      { name: "3", url: "https://bestill.online/add/w.png" },
+
+   { name: "5", url: "https://no.popcardreview.com/cdn/shop/files/GIF_2_900x.gif" },
+
+   { name: "7", url: "https://no.popcardreview.com/cdn/shop/files/Norvegian_900x.gif" }
+      
+    ];
+
+    var perPage = 1;
+    var items = galeri.length; // Galerideki resim sayısı
+
+    function displayList(page) {
+      var start = (page - 1) * perPage;
+      var end = Math.min(start + perPage, items);
+
+      table.innerHTML = ``;
+      for (let i = start; i < end; i++) {
+        table.innerHTML += `<tr><td><img src="${galeri[i].url}" alt="${galeri[i].name}" /></td></tr>`;
+      }
+
+      document
+        .querySelectorAll(".btn")
+        .forEach((value) => value.classList.remove("aktiv"));
+      document.getElementById("id" + page).classList.add("aktiv");
+    }
+
+    for (let i = 1; i <= Math.ceil(items / perPage); i++) {
+      pagination.innerHTML += `<button onclick="displayList(${i})" id='id${i}' class="btn">${i}</button>`;
+    }
+
+    displayList(1);
+  </script>
 </body>
 </html>
