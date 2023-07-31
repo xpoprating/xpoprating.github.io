@@ -4,12 +4,14 @@
   <!-- anime.js -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
 <meta charset="UTF-8">
-<title>PopRating Review</title>
+  <title>Popcard - Øk Anmeldelser og Utvid Virksomheten Din!</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, viewport-fit=cover">
 <meta http-equiv="X-UA-Compatible" content="ie=edge"> 
-  <style>
+  <style>       
     body {
-      background-image: linear-gradient(45deg, #8B5CF6, #EC4899);
+	zoom: 90%;
+    font-family: Arial, sans-serif;
+      background-color:#000000ad;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -92,19 +94,19 @@
     cursor:pointer;
 }
  .full {
-      display: grid;
-      place-items: center;
-      align-content: center;
-      position: fixed;
-      top: 0;
-      left: 0;
-      border: none;
-      background-color: #000000ad;
-      -webkit-backdrop-filter: blur(5px);
-      backdrop-filter: blur(5px);
-      width: 100%;
-      height: 100%;
-      overflow-y: auto;
+display: grid;
+    place-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    border: none;
+    background-color: #000000ad;
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+    justify-content: center;
     }
 
     .off { 
@@ -118,7 +120,10 @@
       width: 90%;
       list-style-type: none;
     }
-
+  .size {
+    width:90%;
+    cursor:pointer;
+  }
   </style>
 </head>
 <body>
@@ -126,23 +131,28 @@
   
   <div class="center links">
   <div onclick="vilkor.classList.toggle('off');">Bestill</div>
-  <div onclick="vilkor.classList.toggle('off');" style="background-color:#1c5a8b;">Priser</div> </div>
-
- 
+  <div onclick="priser.classList.toggle('off');" style="background-color:#1c5a8b;">Priser</div> 
+  <div onclick="omoss.classList.toggle('off');">Om oss</div>
+ </div>
       <div id="pagination"></div>
       <br>
     <table id="table"></table>
-
-  </div>
-   <div id="vilkor" class="full off" onclick="vilkor.classList.toggle('off');" style="display: grid; align-content: center;">
-
-      <ol class="header size" id="Mydiv" style="max-width: 600px;gap: 2px;height:95%;background-color: #f6f6f600; box-shadow: 0px 0px 0px 0px black;">
-        <li class="baslik center ust-radius" style="height:20px;display: flex; justify-content: space-between;">
-          <span><b>Følgende vilkår gjelder:</b></span>
-          <span style="float:left;cursor:pointer;">❌</span>
-        </li>
-        <!-- Rest of the list items -->
-        <!-- ... -->
+    
+    </div>
+   <div id="vilkor" class="full off" onclick="vilkor.classList.toggle('off');" >
+<ol class="header size">
+    <li>
+      Velkommen til PopRating Card, den Google-anmeldelseskort som hjelper deg med å forbedre ditt omdømme på nett og utvide din lokale virksomhet! Med våre innovative kontaktløse Google Review-kort kan du enkelt samle positive anmeldelser fra kundene dine, overdøve de negative, og bli den første på Google!
+    </li>
+    <li>
+      Hvordan fungerer det? Ganske enkelt! Vis kundene dine vårt kontaktløse Google Review-kort, og ved hjelp av NFC-teknologien blir de umiddelbart omdirigert til Google Review-siden din. Det tar kun et øyeblikk for dem å gi deg en positiv anmeldelse, og du kan raskt øke ditt omdømme på nettet!
+    </li>
+    <li>
+       Du kan dra nytte av 50 % rabatt og GRATIS frakt på alle bestillinger! Vi tilbyr forskjellige pakker av Popcards, slik at du kan velge det som passer best for din virksomhet.
+    </li>
+    <li>
+      Hva venter du på? Ta sjansen til å bli den beste i din bransje! Send dine bestillinger til <a href="mailto:xpoprating@gmail.com">xpoprating@gmail.com</a>, eller enkelt bestill via SMS på <a href="tel:+4795557474">+47 95 55 74 74</a>.
+    </li>
         <li class="baslik center alt-radius" style="height:20px;display: flex;justify-content: space-evenly;">
           <div onclick="event.stopPropagation(); Mydiv.scrollTop = 0;">⤴️ Gå Opp</div>
           <div>❌ Lukk</div>
@@ -150,6 +160,37 @@
       </ol>
     </div>
   </div>
+
+   <div id="priser" class="full off" onclick="priser.classList.toggle('off');" >
+<ol class="center size">
+  <li>Popcard Google-anmeldelser tilbys nå til fantastiske priser i begrenset antall!</li>
+    <li>1 Google Popcard: Kun 300 kroner!</li>
+    <li>2 Google Popcards: Bare 500 kroner!</li>
+    <li>5 Google Popcards: Utrolige 1000 kroner!</li>
+          <li class="baslik center alt-radius" style="height:20px;display: flex;justify-content: space-evenly;">
+          <div onclick="event.stopPropagation(); Mydiv.scrollTop = 0;">⤴️ Gå Opp</div>
+          <div>❌ Lukk</div>
+        </li>
+      </ol>
+    </div>
+  </div>
+  
+  
+   <div id="omoss" class="full off" onclick="omoss.classList.toggle('off');" >
+<ol class="center size">
+      <li>Hei! Jeg heter Fatih Alemdar og bor i Kristiansand, Norge.</li>
+      <li>Jeg er lidenskapelig opptatt av Popcard Google-anmeldelser.</li>
+      <li>Målet mitt er å øke bedrifters suksess og kundetilfredshet.</li>
+      <li>E-post: xpoprating@gmail.com, Telefon: +47 95 55 7474.</li>
+      <li>Ser frem til et samarbeid! Takk skal du ha.</li>
+          <li class="baslik center alt-radius" style="height:20px;display: flex;justify-content: space-evenly;">
+          <div onclick="event.stopPropagation(); Mydiv.scrollTop = 0;">⤴️ Gå Opp</div>
+          <div>❌ Lukk</div>
+        </li>
+      </ol>
+    </div>
+  </div>
+  
   <script>
     pagination.onclick = function () {
       const targetLeft = event.target.offsetLeft - pagination.offsetWidth / 1.9;
@@ -164,15 +205,8 @@
     let galeri = [
       { type: "image", name: "1", url: "https://i.hizliresim.com/7rt0q9o.png" },
       { type: "image", name: "2", url: "https://i.hizliresim.com/h8r1bah.png" },
-   { type: "image", name: "2", url: "https://i.hizliresim.com/h8r1bah.png" },
-   { type: "image", name: "2", url: "https://i.hizliresim.com/h8r1bah.png" },
-   { type: "image", name: "2", url: "https://i.hizliresim.com/h8r1bah.png" },
-      { type: "image", name: "2", url: "https://i.hizliresim.com/h8r1bah.png" },
-   { type: "image", name: "2", url: "https://i.hizliresim.com/h8r1bah.png" },
-   { type: "image", name: "2", url: "https://i.hizliresim.com/h8r1bah.png" },
-   { type: "image", name: "2", url: "https://i.hizliresim.com/h8r1bah.png" },
-      { type: "image", name: "3", url: "https://no.popcardreview.com/cdn/shop/files/Norvegian_900x.gif" },
-      { type: "video", name: "4", url: "https://cdn.shopify.com/videos/c/o/v/5d02541860fb41c28e4f7fc322011f24.mp4" }
+	{ type: "video", name: "4", url: "https://xpoprating.github.io/Download.mp4" },
+	{ type: "video", name: "4", url: "https://xpoprating.github.io/Download1.mp4" }
     ];
 
     var perPage = 1;
