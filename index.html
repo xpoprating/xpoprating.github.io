@@ -1,69 +1,97 @@
 <!DOCTYPE html>
-<html lang="nb">
+<html>
 <head>
-<!-- anime.js -->
+  <!-- anime.js -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
- 
-  <meta charset="UTF-8">
-  <title>Charlie's Pizza Kristiansand - Online Pizza Bestilling</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, viewport-fit=cover">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge"> 
-  <meta name="keywords" content="Pizza, online bestilling, Charlie's Pizza, Kristiansand, takeaway, levering, Italiensk pizza">
-  <meta name="description" content="Pizza til folket! Bestill pizza fra Charlie's Pizza. Ferske bunner hver dag. Takeaway og levering. Charlie's Pizza Kristiansand, online pizza bestilling nettsted. Ekte pizza med 100% italienske ingredienser, stekt i profesjonell stein-ovn.">
-  <link rel="icon" type="image/png" href="https://bestill.online/img/icon-s.png">
-
+<meta charset="UTF-8">
+<title>PopRating Review</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, viewport-fit=cover">
+<meta http-equiv="X-UA-Compatible" content="ie=edge"> 
   <style>
-    * {
-      -webkit-tap-highlight-color: transparent;
+    body {
+      background-image: linear-gradient(45deg, #8B5CF6, #EC4899);
+      display: flex;
+      justify-content: center;
+      align-items: center;
       margin: 0;
-      padding: 0;
     }
 
-    body, html {
-      background-color: #0c4c98;
-      font-family: Arial, sans-serif;
-      height: 100%;
+    #container {
+	display: flex;
+    flex-direction: column;
+    max-width: 600px;
+    min-width: 200px;
+    width: 100%;
+    }
+
+    #table {
+      margin-top: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      max-width: 600px;
+      min-width: 200px;
       width: 100%;
-      overflow: hidden;
-      position: fixed;
-      top: 0;
-      left: 0;
-      
+	  margin:auto;
+      text-align: center;
     }
 
-    .header {
+    #pagination {
+      margin-top: 20px;
+      display: flex;
+      align-items: center;
       overflow: auto;
-      box-shadow: 0px 0px 10px 1px black;
-background-image: linear-gradient(45deg, #8B5CF6, #EC4899);
-      height: 100%;
-      max-width: 500px;
-      margin: auto;
-      gap: 30px;
+      max-width: 600px;
+      min-width: 200px;
+      width: 100%;
+	  padding: 10px 0px 10px 0px;
+      gap:10px;
     }
 
-    .center {
-      display: grid;
-      place-items: center;
-      align-items: stretch;
-    }
-
-    .size {
-      zoom: 90%;
-      min-width: 300px;
-      max-width: 450px;
-      width: 90%;
+    .btn {
+      padding: 15px 15px;
       cursor: pointer;
+      border: none;
+      background-color: #f2f2f2;
+	margin:auto;
+	width: 100%;
+	border-radius:10px;
     }
 
-    .baslik {
-      background-color: #0f4079;
-      border: 1px solid black;
-      color: white;
-      height: 50px;
-      font-size: 18px;
+    .aktiv {
+      background-color: gold;
     }
 
-    .full {
+    #table img,  video {
+      max-width: 90%;
+      height: auto;
+	  box-shadow: 0px 7px 20px 3px black;
+      border-radius:20px;
+	  height: 90%;
+    }
+    .links {
+    height:50px;
+    display: flex;
+    justify-content: space-around;
+    min-width: 250px;
+    width: 100%;
+   background-color: #3a167c;
+    }
+.links div{
+	display: flex;
+    background-color: #004a6d;
+    border: none;
+    color: white;
+    padding: 15px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 20px;
+    width: 50%;
+    align-items: center;
+    justify-content: center;
+    cursor:pointer;
+}
+ .full {
       display: grid;
       place-items: center;
       align-content: center;
@@ -91,89 +119,22 @@ background-image: linear-gradient(45deg, #8B5CF6, #EC4899);
       list-style-type: none;
     }
 
-    #table {
-      margin-top: 20px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      max-width: 600px;
-      min-width: 200px;
-      width: 100%;
-      margin: auto;
-      text-align: center;
-	  height: 70%;
-    }
-
-    #pagination {
-    display: flex;
-    overflow: auto;
-    max-width: 600px;
-    min-width: 200px;
-    width: 100%;
-    padding: 10px 0px 10px 0px;
-    margin: auto;
-    }
-
-    .btn {
-      padding: 8px 16px;
-      margin: auto;
-      cursor: pointer;
-      border: none;
-      background-color: #f2f2f2;
-      border-radius: 20px;
-      font-size: 16px;
-      color: #444;
-    }
-
-    .aktiv {
-      background-color: #ffeb3bde;
-    }
-
-    #table img, #vilkor img, video {
-      max-width: 90%;
-      height: auto;
-      box-shadow: 0px 7px 20px 3px black;
-      border-radius: 20px;
-      max-height: 90vh;
-    }
- .links {
-    height:50px;
-    display: flex;
-    justify-content: space-around;
-    min-width: 250px;
-    width: 100%;
-   background-color: #3a167c;
-    }
-.links div{
-	display: flex;
-    background-color: #607D8B;
-    border: none;
-    color: white;
-    padding: 15px;
-    text-align: center;
-    text-decoration: none;
-    font-size: 20px;
-    width: 50%;
-    align-items: center;
-    justify-content: center;
-}
-
   </style>
 </head>
 <body>
+  <div id="container">
   
-  <div class="header center">
-
   <div class="center links">
   <div onclick="vilkor.classList.toggle('off');">Bestill</div>
-  <div onclick="vilkor.classList.toggle('off');" style="background-color:#607777;">Priser</div> </div>
+  <div onclick="vilkor.classList.toggle('off');" style="background-color:#1c5a8b;">Priser</div> </div>
 
-    <div id="pagination" class="size"></div>
-
-    <table id="table" class="center size"></table>
  
+      <div id="pagination"></div>
+      <br>
+    <table id="table"></table>
 
-    <div id="vilkor" class="full off" onclick="vilkor.classList.toggle('off');" style="display: grid; align-content: center;">
+  </div>
+   <div id="vilkor" class="full off" onclick="vilkor.classList.toggle('off');" style="display: grid; align-content: center;">
 
       <ol class="header size" id="Mydiv" style="max-width: 600px;gap: 2px;height:95%;background-color: #f6f6f600; box-shadow: 0px 0px 0px 0px black;">
         <li class="baslik center ust-radius" style="height:20px;display: flex; justify-content: space-between;">
@@ -189,7 +150,6 @@ background-image: linear-gradient(45deg, #8B5CF6, #EC4899);
       </ol>
     </div>
   </div>
-
   <script>
     pagination.onclick = function () {
       const targetLeft = event.target.offsetLeft - pagination.offsetWidth / 1.9;
@@ -205,6 +165,9 @@ background-image: linear-gradient(45deg, #8B5CF6, #EC4899);
       { type: "image", name: "1", url: "https://i.hizliresim.com/7rt0q9o.png" },
       { type: "image", name: "2", url: "https://i.hizliresim.com/h8r1bah.png" },
    { type: "image", name: "2", url: "https://i.hizliresim.com/h8r1bah.png" },
+   { type: "image", name: "2", url: "https://i.hizliresim.com/h8r1bah.png" },
+   { type: "image", name: "2", url: "https://i.hizliresim.com/h8r1bah.png" },
+      { type: "image", name: "2", url: "https://i.hizliresim.com/h8r1bah.png" },
    { type: "image", name: "2", url: "https://i.hizliresim.com/h8r1bah.png" },
    { type: "image", name: "2", url: "https://i.hizliresim.com/h8r1bah.png" },
    { type: "image", name: "2", url: "https://i.hizliresim.com/h8r1bah.png" },
