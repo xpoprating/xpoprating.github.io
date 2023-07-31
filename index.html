@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="nb">
 <head>
+<!-- anime.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+ 
   <meta charset="UTF-8">
   <title>Charlie's Pizza Kristiansand - Online Pizza Bestilling</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, viewport-fit=cover">
@@ -25,6 +28,7 @@
       position: fixed;
       top: 0;
       left: 0;
+      
     }
 
     .header {
@@ -101,20 +105,18 @@ background-image: linear-gradient(45deg, #8B5CF6, #EC4899);
     }
 
     #pagination {
-      margin-top: 20px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      overflow: auto;
-      max-width: 600px;
-      min-width: 200px;
-      width: 100%;
-      padding: 10px 0px 10px 0px;
+    display: flex;
+    overflow: auto;
+    max-width: 600px;
+    min-width: 200px;
+    width: 100%;
+    padding: 10px 0px 10px 0px;
+    margin: auto;
     }
 
     .btn {
       padding: 8px 16px;
-      margin: 0 5px;
+      margin: auto;
       cursor: pointer;
       border: none;
       background-color: #f2f2f2;
@@ -143,7 +145,7 @@ background-image: linear-gradient(45deg, #8B5CF6, #EC4899);
    background-color: #3a167c;
     }
 .links div{
-display: flex;
+	display: flex;
     background-color: #607D8B;
     border: none;
     color: white;
@@ -155,13 +157,7 @@ display: flex;
     align-items: center;
     justify-content: center;
 }
-.sabit {
-      position: fixed;
-      top: 40px;
-      left: 0;
-      right:0;
-      margin:auto;
-      }
+
   </style>
 </head>
 <body>
@@ -172,9 +168,9 @@ display: flex;
   <div onclick="vilkor.classList.toggle('off');">Bestill</div>
   <div onclick="vilkor.classList.toggle('off');" style="background-color:#607777;">Priser</div> </div>
 
-    <div id="pagination" class="sabit size"></div>
+    <div id="pagination" class="size"></div>
 
-    <table id="table" class="sabit center size" style="top:130px;"></table>
+    <table id="table" class="center size"></table>
  
 
     <div id="vilkor" class="full off" onclick="vilkor.classList.toggle('off');" style="display: grid; align-content: center;">
@@ -208,6 +204,10 @@ display: flex;
     let galeri = [
       { type: "image", name: "1", url: "https://i.hizliresim.com/7rt0q9o.png" },
       { type: "image", name: "2", url: "https://i.hizliresim.com/h8r1bah.png" },
+   { type: "image", name: "2", url: "https://i.hizliresim.com/h8r1bah.png" },
+   { type: "image", name: "2", url: "https://i.hizliresim.com/h8r1bah.png" },
+   { type: "image", name: "2", url: "https://i.hizliresim.com/h8r1bah.png" },
+   { type: "image", name: "2", url: "https://i.hizliresim.com/h8r1bah.png" },
       { type: "image", name: "3", url: "https://no.popcardreview.com/cdn/shop/files/Norvegian_900x.gif" },
       { type: "video", name: "4", url: "https://cdn.shopify.com/videos/c/o/v/5d02541860fb41c28e4f7fc322011f24.mp4" }
     ];
